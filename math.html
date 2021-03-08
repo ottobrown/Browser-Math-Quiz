@@ -1,37 +1,30 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
-
 <head>
     <title>Math</title>
     <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/7/7b/Math.png">
     <!--Placeholder png from wikimedia-->
 </head>
+
 <body>  
 
-<style>
-    b {
-    text-align: center; font-size: 50px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
-    }
+<link rel="stylesheet" href="math.css">
 
-    input {
-        font-size: 50px; height: 50px; width: 75px; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-
-
-</style>
-
-    <b id="question">TEXT</b>
-    <input id="answer" type="text">
+<div id="test">
+    <b id="question">Question failed to generate</b>
+    <input id="answer" type="number">
     <h1 id="correctOutOfTotal">0 out of 0 (100%)</h1>
+</div>
+    <button id="multiplyToggle" onclick="updateOperators(0, 'multiplyToggle')">×</button>
     <br>
-    <button style="background-color: cornflowerblue;"" id="multiplyToggle" onclick="updateOperators(0, 'multiplyToggle')">Multiplication</button>
-    <button style="background-color: cornflowerblue;"" id="divideToggle" onclick="updateOperators(1, 'divideToggle')">Divison</button>
-    <button style="background-color: cornflowerblue;"" id="addToggle" onclick="updateOperators(2, 'addToggle')">Addition</button>
-    <button style="background-color: cornflowerblue;"" id="substractToggle" onclick="updateOperators(3, 'substractToggle')">Subtraction</button>
+    <button id="divideToggle" onclick="updateOperators(1, 'divideToggle')">÷</button>
+    <br>
+    <button id="addToggle" onclick="updateOperators(2, 'addToggle')">+</button>
+    <br>
+    <button id="substractToggle" onclick="updateOperators(3, 'substractToggle')">-</button>
 
-<script src="math.js">
-</script>
+<script src="math.js"></script>
 
 </body>
 </html>

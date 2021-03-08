@@ -6,10 +6,12 @@ wrongAnswers = 0
 
 function updateOperators(swap, myid) {
     // 0 = * | 1 = / | 2 = + | 3 = - |
-    operators[swap] = Math.abs(operators[swap] - 1)
     let swapbutton = document.getElementById(myid).style.backgroundColor
-    if (swapbutton == 'cornflowerblue') {document.getElementById(myid).style.background = "grey"}
-    else {document.getElementById(myid).style.background = "cornflowerblue"}
+    if (swapbutton == 'cornflowerblue') {document.getElementById(myid).style.background = "grey"
+        operators[swap] = 0}
+    else {document.getElementById(myid).style.background = "cornflowerblue"
+        operators[swap] = 1}
+    console.log("button pressed")
 }
 
 
@@ -31,20 +33,19 @@ function fetchAnswer(key) {
             console.log("Incorrect")
             wrongAnswers ++
             score()
-            // put 'incorrect' on the screen in red
         }
         }
     }
 
 function score() {
-
     let totalAnswers = rightAnswers + wrongAnswers
     let percent = Math.floor((rightAnswers / totalAnswers) * 100)
     document.getElementById("correctOutOfTotal").innerHTML = rightAnswers + ' out of ' + totalAnswers + '(' + percent + '%)'
 }
+
 function generateQuestion() {
     let chosenop = Math.floor(Math.random() * 4)
-    if (operators[chosenop] == 1) {
+    if (operators[chosenop] === 1) {
         if (chosenop == 0) {multiply()}
         if (chosenop == 1)  {divide()}
         if (chosenop == 2) {add()}
@@ -62,7 +63,7 @@ function multiply() {
     let num1 = Math.floor(Math.random() * 12)
     num1 = num1 + 1 
     correctAnswer = num0 * num1 
-    document.getElementById("question").innerHTML = num0 + ' x ' + num1 + ' = ' 
+    document.getElementById("question").innerHTML = num0 + 'x' + num1 + ' = ' 
 }
 
 function divide() {
@@ -72,7 +73,7 @@ function divide() {
     num1 = num1 + 1
     let num2 = num0 * num1
     correctAnswer = num0  
-    document.getElementById("question").innerHTML = num2 + ' ÷ ' + num1 + ' = ' 
+    document.getElementById("question").innerHTML = num2 + '÷' + num1 + ' = ' 
 }
 
 function add() {
@@ -81,7 +82,7 @@ function add() {
     let num1 = Math.floor(Math.random() * 12)
     num1 = num1 + 1 
     correctAnswer = num0 +  num1 
-    document.getElementById("question").innerHTML = num0 + ' + ' + num1 + ' = ' 
+    document.getElementById("question").innerHTML = num0 + '+' + num1 + ' = ' 
 }
 
 function subtract() {
@@ -91,8 +92,9 @@ function subtract() {
     num1 = num1 + 1 
     let num2 = num0 + num1
     correctAnswer = num0 
-    document.getElementById("question").innerHTML = num2 + ' - ' + num1 + ' = ' 
+    document.getElementById("question").innerHTML = num2 + '-' + num1 + ' = ' 
 }
 
+function timer() {}
 
 generateQuestion()
