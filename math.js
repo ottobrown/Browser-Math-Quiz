@@ -46,30 +46,9 @@ function score() {
 }
 
 function generateQuestion() {
-    basicmath()
+    if (rng() % 2 == 0) {solveforx()}
+    else {basicmath()}
     //add a way to determine which function to call
 }
 
-
-
-//
-// Question functions
-//
-
-
-
-
-
-function basicmath() {
-let num0 = rng()
-let num1 = rng() 
-    let chosenop = Math.floor(Math.random() * 4)
-    if (operators[chosenop] === 1) {
-        if (chosenop == 0) {correctAnswer = num0 * num1; document.getElementById("question").innerHTML = num0 + 'x' + num1 + ' = ' }
-        if (chosenop == 1) {let num2 = num0 * num1; correctAnswer = num0; document.getElementById("question").innerHTML = num2 + '÷' + num1 + ' = ' }
-        if (chosenop == 2) {correctAnswer = num0 + num1; document.getElementById("question").innerHTML = num0 + '+' + num1 + ' = ' }
-        if (chosenop == 3) {let num2 = num0 + num1; correctAnswer = num0; document.getElementById("question").innerHTML = num2 + '-' + num1 + ' = ' }
-    }
-    else {basicmath()}
-}
 generateQuestion()
