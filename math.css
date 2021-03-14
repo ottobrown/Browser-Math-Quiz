@@ -1,19 +1,19 @@
 b {
 text-align: center;
 font-size: 50px; font-family: 'Courier New', Courier, monospace ;
-color: white;
+color: rgb(50, 255, 50);
 -webkit-text-stroke: black 2px;
 }
 
 input {
     font-size: 50px; height: 50px;
     -webkit-text-stroke: black 2px;
-    width: 75px;
+    width: 100px;
     font-family: 'Courier New', Courier, monospace;
 }
 
 body {
-    background-color: rgb(129, 129, 129);
+    background-color: rgb(0, 0, 0);
 }
 
 button {
@@ -23,4 +23,13 @@ button {
 
 #test {
     text-align: center;
+}
+
+#negativetext {
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#correctOutOfTotal {
+    color: rgb(50, 255, 50);
 }

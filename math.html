@@ -16,6 +16,9 @@
     <input id="answer" type="number">
     <h1 id="correctOutOfTotal">0 out of 0 (100%)</h1>
 </div>
+
+<div>
+    <!-- Make these buttons dissapear when non-applicable functions are run-->
     <button id="multiplyToggle" onclick="updateOperators(0, 'multiplyToggle')">×</button>
     <br>
     <button id="divideToggle" onclick="updateOperators(1, 'divideToggle')">÷</button>
@@ -23,7 +26,23 @@
     <button id="addToggle" onclick="updateOperators(2, 'addToggle')">+</button>
     <br>
     <button id="substractToggle" onclick="updateOperators(3, 'substractToggle')">-</button>
+    <br>
+    <!--
+    <input style="height: 30px;" type="checkbox" checked="false" id="negativeCheckbox">
+    <b id="negativetext">Allow negatives within absolute value of range</b> 
+    -->
+    
+</div>
 
+<div>
+    <b>Range:</b>
+    <input type="number" value="1" id="min">
+    <b>-</b>
+    <input type="number" value="12" id="max">
+</div>
+
+<script src="RNG.js"></script>
+<script src="algebra.js"></script>
 <script src="math.js"></script>
 
 </body>
