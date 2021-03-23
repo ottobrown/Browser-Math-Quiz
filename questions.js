@@ -1,4 +1,5 @@
-function solveforx() {
+var questionFunctions = {
+toggleSolvex: function solveforx() {
     let addorsub
     let x = rng()
     let coeffx = rng()
@@ -9,9 +10,9 @@ function solveforx() {
     if (add <= 0) {addorsub = '-'}
     else {addorsub = '+'}
     document.getElementById("question").innerHTML = coeffx + 'x' + addorsub + Math.abs(add) + '=' + answer + '  x='
-}
+},
 
-function basicmath() {
+toggleBasicquestion: function basicmath() {
     let num0 = rng()
     let num1 = rng() 
         let chosenop = Math.floor(Math.random() * 4)
@@ -23,3 +24,6 @@ function basicmath() {
         }
         else {basicmath()}
     }
+
+
+}

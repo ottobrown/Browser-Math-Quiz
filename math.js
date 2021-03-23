@@ -5,6 +5,11 @@ operators = [1, 1, 1, 1]
 rightAnswers = 0
 wrongAnswers = 0
 
+var questions = {
+    toggleBasicquestion: true,
+    toggleSolvex: true,
+}
+
 function updateOperators(swap, myid) {
     // 0 = * | 1 = / | 2 = + | 3 = - |
     let swapbutton = document.getElementById(myid).style.backgroundColor
@@ -14,6 +19,15 @@ function updateOperators(swap, myid) {
         operators[swap] = 1}
     if (operators == [0, 0, 0, 0]) {document.getElementById("question").innerHTML = 'question failed to generate'}
     console.log("button pressed")
+}
+
+function updateQuesions(myid) {
+    let swapbutton = document.getElementById(myid).style.backgroundColor
+    if (swapbutton == 'cornflowerblue') {document.getElementById(myid).style.background = "grey"
+        questions[myid] = false}
+    else {document.getElementById(myid).style.background = "cornflowerblue"
+        questions[myid] = true}
+    console.log(questions.myid)
 }
 
 
@@ -46,9 +60,15 @@ function score() {
 }
 
 function generateQuestion() {
-    if (rng() % 2 == 0) {solveforx()}
-    else {basicmath()}
-    //add a way to determine which function to call
+    // makes questionid be a random name of an object property for both questions and questionFunctions
+        var questionid;
+        var count = 0;
+        for (var prop in questions)
+            if (Math.random() < 1/++count) {
+               questionid = prop;}
+    if (questions[questionid] == true) {questionFunctions[questionid]()} 
+    else{generateQuestion()}
+    //This causes it to redo questions after marking the answer as correct
 }
 
 generateQuestion()
