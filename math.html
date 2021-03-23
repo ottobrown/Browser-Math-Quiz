@@ -11,10 +11,18 @@
 
 <link rel="stylesheet" href="math.css">
 
-<div id="test">
+<div id="problem">
     <b id="question">Question failed to generate</b>
     <input id="answer" type="number">
     <h1 id="correctOutOfTotal">0 out of 0 (100%)</h1>
+</div>
+
+<div id="QuestionToggleDiv" >
+    <b style="font-size: 30px;">Question Types:</b>
+    <br>
+    <button class="QuestionToggleButton" id="toggleBasicquestion" onclick="updateQuesions('toggleBasicquestion')">÷x
+        +-</button>
+    <button class="QuestionToggleButton" id="toggleSolvex" onclick="updateQuesions('toggleSolvex')">Solve for x</button>
 </div>
 
 <div>
@@ -40,6 +48,8 @@
     <b>-</b>
     <input type="number" value="12" id="max">
 </div>
+
+
 
 <script src="RNG.js"></script>
 <script src="questions.js"></script>
